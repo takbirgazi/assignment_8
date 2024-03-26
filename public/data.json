@@ -1,0 +1,81 @@
+[
+    {
+    "id": 1,
+    "image": "https://i.ibb.co/F5c9LWG/book-1.png",
+    "bookName": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "category": ["Fiction","Classic"],
+    "tags": ["Classic", "American Literature", "Romance"],
+    "totalPages": 218,
+    "publisher": "Scribner",
+    "yearOfPublishing": 1925,
+    "rating": 4.2,
+    "customerReview": "A captivating story with brilliant characters. I couldn't put it down!"
+    },
+    {
+    "id": 2,
+    "image": "https://i.ibb.co/NnN2F4t/book-2.png",
+    "bookName": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "category": ["Romance","Classic"],
+    "tags": ["Classic", "Southern Gothic", "Legal drama"],
+    "totalPages": 324,
+    "publisher": "J. B. Lippincott & Co.",
+    "yearOfPublishing": 1960,
+    "rating": 4.5,
+    "customerReview": "An incredibly moving novel that tackles important social issues. Highly recommended!"
+    },
+    {
+    "id": 3,
+    "image": "https://i.ibb.co/bN4xNjb/book-3.png",
+    "bookName": "1984",
+    "author": "George Orwell",
+    "category": ["Fiction","Legal drama"],
+    "tags": ["Dystopian", "Political fiction", "Social Science Fiction"],
+    "totalPages": 328,
+    "publisher": "Secker & Warburg",
+    "yearOfPublishing": 1949,
+    "rating": 4.6,
+    "customerReview": "A chilling portrayal of a totalitarian society. Orwell's vision is hauntingly relevant even today."
+    },
+    {
+    "id": 4,
+    "image": "https://i.ibb.co/3y4NKXp/book-4.png",
+    "bookName": "The Catcher in the Rye",
+    "author": "J. D. Salinger",
+    "category": ["Romance","Legal drama"],
+    "tags": ["Coming-of-age", "Literary fiction"],
+    "totalPages": 224,
+    "publisher": "Little, Brown and Company",
+    "yearOfPublishing": 1951,
+    "rating": 4.3,
+    "customerReview": "Holden Caulfield's voice is raw and authentic. This book captures the essence of adolescence like no other."
+    },
+    {
+    "id": 5,
+    "image": "https://i.ibb.co/LrPh0WX/book-5.png",
+    "bookName": "Pride and Prejudice",
+    "author": "Jane Austen",
+    "category": ["Dystopian","Political fiction"],
+    "tags": ["Romance", "Classic", "Comedy of manners"],
+    "totalPages": 279,
+    "publisher": "T. Egerton, Whitehall",
+    "yearOfPublishing": 1813,
+    "rating": 4.7,
+    "customerReview": "A delightful romance filled with wit and charm. Jane Austen's characters are timeless."
+    },
+    {
+    "id": 6,
+    "image": "https://i.ibb.co/6ybJ2QH/book-6.png",
+    "bookName": "The Lord of the Rings",
+    "author": "J. R. R. Tolkien",
+    "category": ["Coming-of-age", "Literary fiction"],
+    "tags": ["High fantasy", "Adventure", "Epic"],
+    "totalPages": 1178,
+    "publisher": "George Allen & Unwin",
+    "yearOfPublishing": 1954,
+    "rating": 4.8,
+    "customerReview": "A breathtaking journey through Middle-earth. Tolkien's world-building is unmatched!"
+    }
+]
+  

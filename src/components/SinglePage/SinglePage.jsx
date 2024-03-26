@@ -1,5 +1,10 @@
-import image from "../../assets/images/book-1.png"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import image from "../../assets/images/book-1.png";
+
 const SinglePage = () => {
+    const readTost = () => toast("Add to reaad!");
+    const addWishlist = ()=> toast("Add Wishlist");
     return (
         <div className="flex lg:flex-row flex-col gap-10">
             <div className="w-1/2 flex items-center justify-center bg-gray-200 rounded-lg py-5">
@@ -32,10 +37,11 @@ const SinglePage = () => {
                     
                 </div>
                 <div className="navbar flex gap-5 text-white">
-                    <a className="px-4 py-2 border cursor-pointer rounded bg-white hover:bg-[#50B1C9] hover:text-white text-black">Read</a>
-                    <a className="px-4 py-2 border cursor-pointer rounded bg-[#50B1C9] hover:bg-white hover:text-black">Wishlist</a>
+                    <a className="px-4 py-2 border cursor-pointer rounded bg-white hover:bg-[#50B1C9] hover:text-white text-black" onClick={readTost}>Read</a>
+                    <a className="px-4 py-2 border cursor-pointer rounded bg-[#50B1C9] hover:bg-white hover:text-black" onClick={addWishlist}>Wishlist</a>
                 </div>
             </div>
+            <ToastContainer />
         </div>
         );
 };

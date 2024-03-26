@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import ReadBookList from "../ReadBookList/ReadBookList";
 import WishListBook from "../WishListBook/WishListBook";
 
@@ -8,17 +9,15 @@ const ListBooks = () => {
                 <h2 className="py-5 font-bold text-2xl">Books</h2>
             </div>
             <div className="flex items-center justify-center py-5">
-                <select className="select select-success w-full max-w-xs">
-                    <option disabled selected>Sort By</option>
-                    <option>One Piece</option>
-                    <option>Naruto</option>
-                    <option>Death Note</option>
-                    <option>Attack on Titan</option>
-                    <option>Bleach</option>
-                    <option>Fullmetal Alchemist</option>
-                    <option>Jojos Bizarre Adventure</option>
-                </select>
-            </div>
+                <div className="dropdown">
+                    <div tabIndex={0} role="button" className="btn m-1">Click</div>
+                        <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+                            <li className="my-2"><NavLink>Rating</NavLink></li>
+                            <li className="my-2"><NavLink>Number of pages</NavLink></li>
+                            <li className="my-2"><NavLink>Publisher year</NavLink></li>
+                        </ul>
+                    </div>
+                </div>
             <div>
                 <div role="tablist" className="tabs tabs-lifted">
                     <input type="radio" name="my_tabs_2" role="tab" className="tab" aria-label="Tab 1" checked />

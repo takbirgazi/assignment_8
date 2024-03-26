@@ -10,6 +10,7 @@ import ErrorPage from './components/ErrorPage/ErrorPage.jsx';
 import Home from './components/Home/Home.jsx';
 import ListBooks from './components/ListBooks/ListBooks.jsx';
 import PageRead from './components/PageRead/PageRead.jsx';
+import SinglePage from './components/SinglePage/SinglePage.jsx';
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
+        loader: ()=> fetch(`data.json`),
         element: <Home></Home>
       },
       {
@@ -29,6 +31,10 @@ const router = createBrowserRouter([
         path: "/read",
         element: <PageRead></PageRead>
       },
+      {
+        path: "/single/:id",
+        element: <SinglePage></SinglePage>,
+      }
 
     ]
   },

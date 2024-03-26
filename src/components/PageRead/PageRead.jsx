@@ -1,10 +1,10 @@
-import SinglePage from "../SinglePage/SinglePage";
+import MyBarChart from "../MyBarChart/MyBarChart";
 
 const PageRead = () => {
     return (
         <div>
             This is PageRead Page
-            <SinglePage></SinglePage>
+            <MyBarChart></MyBarChart>
         </div>
     );
 };
