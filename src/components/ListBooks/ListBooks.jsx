@@ -1,3 +1,6 @@
+import ReadBookList from "../ReadBookList/ReadBookList";
+import WishListBook from "../WishListBook/WishListBook";
+
 const ListBooks = () => {
     return (
         <div>
@@ -15,6 +18,25 @@ const ListBooks = () => {
                     <option>Fullmetal Alchemist</option>
                     <option>Jojos Bizarre Adventure</option>
                 </select>
+            </div>
+            <div>
+                <div role="tablist" className="tabs tabs-lifted">
+                    <input type="radio" name="my_tabs_2" role="tab" className="tab" aria-label="Tab 1" checked />
+                    <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box p-6">
+                        <div>
+                            <ReadBookList></ReadBookList>
+                        </div>
+                    </div>
+
+                    <input type="radio" name="my_tabs_2" role="tab" className="tab" aria-label="Tab 2" />
+                    <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box p-6">
+                        <div>
+                            <WishListBook></WishListBook>
+                        </div>
+                    </div>
+                </div>
+                
+
             </div>
         </div>
     );

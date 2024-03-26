@@ -7,8 +7,8 @@ const Book = () => {
                 <img className="h-60 p-4" src={book} alt="" />
             </div>
             <p className="py-5 flex gap-2 items-center">
-                <span className="px-4 py-2 font-bold rounded-full border border-[#23be0a61] bg-[#23be0a12] text-[#23BE0A]">abcvdh</span> 
-                <span className="px-4 py-2 font-bold rounded-full border border-[#23be0a61] bg-[#23be0a12] text-[#23BE0A]">abcvdh</span> 
+                <span className="px-4 py-1 font-bold rounded-full border border-[#23be0a61] bg-[#23be0a12] text-[#23BE0A]">abcvdh</span> 
+                <span className="px-4 py-1 font-bold rounded-full border border-[#23be0a61] bg-[#23be0a12] text-[#23BE0A]">abcvdh</span> 
 
             </p>
             <h2 className="py-5 text-2xl font-bold">The Catcher in the Rye</h2>

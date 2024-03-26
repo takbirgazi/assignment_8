@@ -19,16 +19,16 @@ const SinglePage = () => {
                 </p>
                 <div className="grid grid-cols-2 gap-2">
                     <p>Number of Pages:</p>
-                    <p>458</p>
+                    <p className="font-semibold">458</p>
 
                     <p>Publisher:</p>
-                    <p>545</p>
+                    <p className="font-semibold">545</p>
 
                     <p>Year of Publishing:</p>
-                    <p>56+5</p>
+                    <p className="font-semibold">56+5</p>
 
                     <p>Rating:</p>
-                    <p>5</p>
+                    <p className="font-semibold">5</p>
                     
                 </div>
                 <div className="navbar flex gap-5 text-white">
