@@ -3,8 +3,8 @@ import { FaRegStar } from "react-icons/fa";
 const Book = () => {
     return (
         <div className="border rounded-md p-4 cursor-pointer">
-            <div className="flex items-center justify-center">
-                <img className="h-60" src={book} alt="" />
+            <div className="flex items-center justify-center bg-gray-200 rounded-md">
+                <img className="h-60 p-4" src={book} alt="" />
             </div>
             <p className="py-5 flex gap-2 items-center">
                 <span className="px-4 py-2 font-bold rounded-full border border-[#23be0a61] bg-[#23be0a12] text-[#23BE0A]">abcvdh</span> 
