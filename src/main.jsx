@@ -8,6 +8,8 @@ import App from './App.jsx';
 import './index.css';
 import ErrorPage from './components/ErrorPage/ErrorPage.jsx';
 import Home from './components/Home/Home.jsx';
+import ListBooks from './components/ListBooks/ListBooks.jsx';
+import PageRead from './components/PageRead/PageRead.jsx';
 
 const router = createBrowserRouter([
   {
@@ -21,11 +23,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/list",
-        element: <div>This is List Page</div>
+        element: <ListBooks></ListBooks>
       },
       {
         path: "/read",
-        element: <div>This is Read Page</div>
+        element: <PageRead></PageRead>
       },
 
     ]
