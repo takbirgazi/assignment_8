@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import book from "../../assets/images/book-1.png"
 const HeroArea = () => {
     return (
@@ -6,7 +7,7 @@ const HeroArea = () => {
                 <img src={book} className="rounded-lg" />
                 <div className="w-2/3">
                     <h1 className="text-5xl font-bold mb-5 w-2/3">Books to freshen up your bookshelf</h1>
-                    <button className="btn btn-primary">View The List</button>
+                    <NavLink to="/list" className="btn btn-primary">View The List</NavLink>
                 </div>
             </div>
         </div>
