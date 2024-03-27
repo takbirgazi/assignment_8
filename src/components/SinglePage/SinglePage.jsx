@@ -1,6 +1,5 @@
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import image from "../../assets/images/book-1.png";
 import { useState } from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
 import { setBook } from '../../utility/storeData';
@@ -15,7 +14,7 @@ const SinglePage = () => {
     const [wishList, setWishList] = useState([]);
 
     const currentBook = books.find(book => book.id == intIt);
-    const {bookName,author,publisher,customerReview,tags,category,totalPages,yearOfPublishing,rating} = currentBook;
+    const {image,bookName,author,publisher,customerReview,tags,category,totalPages,yearOfPublishing,rating} = currentBook;
 
     const addReadBookHandlr = (newBook)=>{
         const addReadBook = [...readBok,newBook];
@@ -44,10 +43,10 @@ const SinglePage = () => {
 
     return (
         <div className="flex lg:flex-row flex-col gap-10">
-            <div className="w-1/2 flex items-center justify-center bg-gray-200 rounded-lg py-5">
-                <img src={image} />
+            <div className="lg:w-1/2 flex items-center justify-center bg-gray-200 rounded-lg py-5">
+                <img className='w-80' src={image} />
             </div>
-            <div className="w-1/2 flex flex-col gap-5">
+            <div className="lg:w-1/2 flex flex-col gap-5">
                 <h2 className="font-bold text-2xl">{bookName}</h2>
                 <p>By : <span>{author}</span></p>
                 <p className="py-2 border-t border-b">{
@@ -57,7 +56,7 @@ const SinglePage = () => {
                 <p className="py-5 flex gap-2 items-center border-b">
 
                     <span className="font-semibold">Tags: </span>
-                    {tags.map((tag, ind)=> <span key={ind} className="px-4 py-1 font-bold rounded-full border border-[#23be0a61] bg-[#23be0a12] text-[#23BE0A]">{tag}</span> )}
+                    {tags.map((tag, ind)=> <span key={ind} className="lg:px-4 px-2 py-1 lg:font-bold lg:text-sm text-xs text-center rounded-full border border-[#23be0a61] bg-[#23be0a12] text-[#23BE0A]">{tag}</span> )}
 
                 </p>
                 <div className="grid grid-cols-2 gap-2">
