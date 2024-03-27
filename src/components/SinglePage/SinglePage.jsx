@@ -3,16 +3,18 @@ import 'react-toastify/dist/ReactToastify.css';
 import image from "../../assets/images/book-1.png";
 import { useState } from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
+import { setBook } from '../../utility/storeData';
 
 const SinglePage = () => {
     const books = useLoaderData();
     const {id} = useParams();
+    const intIt = parseInt(id);
     // const [currentBook, setCurrentBook] = useState();
 
     const [readBok, setReadBook] = useState([]);
     const [wishList, setWishList] = useState([]);
 
-    const currentBook = books.find(book => book.id == id);
+    const currentBook = books.find(book => book.id == intIt);
     const {bookName,author,publisher,customerReview,tags,category,totalPages,yearOfPublishing,rating} = currentBook;
 
     const addReadBookHandlr = (newBook)=>{
@@ -22,6 +24,7 @@ const SinglePage = () => {
             return;
         }
         setReadBook(addReadBook);
+        setBook(intIt);
         toast("Book add in read list");
     }
 

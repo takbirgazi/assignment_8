@@ -1,8 +1,21 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLoaderData } from "react-router-dom";
 import ReadBookList from "../ReadBookList/ReadBookList";
 import WishListBook from "../WishListBook/WishListBook";
+import { getBook } from "../../utility/storeData";
+import { useEffect, useState } from "react";
 
 const ListBooks = () => {
+    const allBook = useLoaderData();
+    const [currentReadBook ,setCurrentReadBook] =  useState([]);
+    useEffect(()=>{
+        const storedBook = getBook();
+        if(allBook.length > 0){
+            const readBooks = allBook.filter( book => storedBook.includes(book.id));
+            setCurrentReadBook(readBooks);
+        }
+
+    },[allBook])
+
     return (
         <div>
             <div className="bg-gray-200 rounded-lg flex items-center justify-center">
@@ -18,7 +31,7 @@ const ListBooks = () => {
                         </ul>
                     </div>
                 </div>
-                
+
             <div>
 
                 <div role="tablist" className="tabs tabs-lifted">
@@ -26,15 +39,15 @@ const ListBooks = () => {
                     <input type="radio" name="my_tabs_2" role="tab" className="tab" aria-label="Tab 1" checked />
                     <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box p-6">
                         <div className="flex flex-col gap-5">
-                            <ReadBookList></ReadBookList>
+                            {currentReadBook.map( book => <ReadBookList key={book.id} bookInfo={book}></ReadBookList>)}       
                         </div>
                     </div>
 
                     <input type="radio" name="my_tabs_2" role="tab" className="tab" aria-label="Tab 2" />
                     <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box p-6">
                         <div className="flex flex-col gap-5">
-                            <WishListBook></WishListBook>
-                            <WishListBook></WishListBook>
+                            <WishListBook key={2}></WishListBook>
+                            <WishListBook key={3}></WishListBook>
                         </div>
                     </div>
 
