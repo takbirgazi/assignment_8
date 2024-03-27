@@ -2,10 +2,18 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import image from "../../assets/images/book-1.png";
 import { useState } from 'react';
+import { useLoaderData, useParams } from 'react-router-dom';
 
 const SinglePage = () => {
+    const books = useLoaderData();
+    const {id} = useParams();
+    // const [currentBook, setCurrentBook] = useState();
+
     const [readBok, setReadBook] = useState([]);
     const [wishList, setWishList] = useState([]);
+
+    const currentBook = books.find(book => book.id == id);
+    const {bookName,author,publisher,customerReview,tags,category,totalPages,yearOfPublishing,rating} = currentBook;
 
     const addReadBookHandlr = (newBook)=>{
         const addReadBook = [...readBok,newBook];
@@ -24,15 +32,12 @@ const SinglePage = () => {
             return;
         }
         if(readBok.includes(newWish)){
-            toast("You Are All ready in Read");
+            toast("All Ready Read The Book");
             return
         }
         setWishList(addWishlist);
         toast("Book add in wishlist");
     }
-
-    console.log(wishList);    
-    console.log(readBok);
 
     return (
         <div className="flex lg:flex-row flex-col gap-10">
@@ -40,34 +45,35 @@ const SinglePage = () => {
                 <img src={image} />
             </div>
             <div className="w-1/2 flex flex-col gap-5">
-                <h2 className="font-bold text-2xl">The Catcher in the Rye</h2>
-                <p>By : <span>Awlad Hossain</span></p>
-                <p className="py-2 border-t border-b">Fiction</p>
-                <p><span className="font-semibold">Review : </span>Sit amet consectetur. Interdum porta pulvinar non sit aliquam. Aenean pulvinar blandit vel non enim elementum penatibus pellentesque ac. Nec accumsan euismod nulla adipiscing lectus. Morbi elementum a auctor erat diam tellus. Fermentum faucibus nulla enim ornare.Id neque neque pretium enim platea urna non dictum. Faucibus dignissim ridiculus nibh tristique massa non.</p>
+                <h2 className="font-bold text-2xl">{bookName}</h2>
+                <p>By : <span>{author}</span></p>
+                <p className="py-2 border-t border-b">{
+                    category.map((cat)=> `${cat}  `)
+                }</p>
+                <p><span className="font-semibold">Review : </span>{customerReview}</p>
                 <p className="py-5 flex gap-2 items-center border-b">
 
                     <span className="font-semibold">Tags: </span>
-                    <span className="px-4 py-1 font-bold rounded-full border border-[#23be0a61] bg-[#23be0a12] text-[#23BE0A]">abcvdh</span> 
-                    <span className="px-4 py-1 font-bold rounded-full border border-[#23be0a61] bg-[#23be0a12] text-[#23BE0A]">abcvdh</span> 
+                    {tags.map((tag, ind)=> <span key={ind} className="px-4 py-1 font-bold rounded-full border border-[#23be0a61] bg-[#23be0a12] text-[#23BE0A]">{tag}</span> )}
 
                 </p>
                 <div className="grid grid-cols-2 gap-2">
                     <p>Number of Pages:</p>
-                    <p className="font-semibold">458</p>
+                    <p className="font-semibold">{totalPages}</p>
 
                     <p>Publisher:</p>
-                    <p className="font-semibold">545</p>
+                    <p className="font-semibold">{publisher}</p>
 
                     <p>Year of Publishing:</p>
-                    <p className="font-semibold">56+5</p>
+                    <p className="font-semibold">{yearOfPublishing}</p>
 
                     <p>Rating:</p>
-                    <p className="font-semibold">5</p>
+                    <p className="font-semibold">{rating}</p>
                     
                 </div>
                 <div className="navbar flex gap-5 text-white">
-                    <a className="px-4 py-2 border cursor-pointer rounded bg-white hover:bg-[#50B1C9] hover:text-white text-black" onClick={ ()=>addReadBookHandlr(1)}>Read</a>
-                    <a className="px-4 py-2 border cursor-pointer rounded bg-[#50B1C9] hover:bg-white hover:text-black" onClick={()=> addWishListHandlr(1)}>Wishlist</a>
+                    <a className="px-4 py-2 border cursor-pointer rounded bg-white hover:bg-[#50B1C9] hover:text-white text-black" onClick={ ()=>addReadBookHandlr(id)}>Read</a>
+                    <a className="px-4 py-2 border cursor-pointer rounded bg-[#50B1C9] hover:bg-white hover:text-black" onClick={()=> addWishListHandlr(id)}>Wishlist</a>
                 </div>
             </div>
             <ToastContainer />
