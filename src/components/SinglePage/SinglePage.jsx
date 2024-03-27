@@ -1,10 +1,38 @@
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import image from "../../assets/images/book-1.png";
+import { useState } from 'react';
 
 const SinglePage = () => {
-    const readTost = () => toast("Add to reaad!");
-    const addWishlist = ()=> toast("Add Wishlist");
+    const [readBok, setReadBook] = useState([]);
+    const [wishList, setWishList] = useState([]);
+
+    const addReadBookHandlr = (newBook)=>{
+        const addReadBook = [...readBok,newBook ];
+        if(readBok.includes(newBook)){
+            toast("Book are all ready in rad list");
+            return;
+        }
+        if(wishList.includes(newBook)){
+            toast("Book are all ready in wishlist");
+            return;
+        }
+        setReadBook(addReadBook);
+        toast("Book add in read list");
+    }
+
+    const addWishListHandlr = (newWish)=>{
+        const addWishlist = [...wishList, newWish];
+        if(wishList.includes(newWish)){
+            toast("Book are all ready in wishlist");
+            return;
+        }
+        setWishList(addWishlist);
+        toast("Book add in wishlist");
+    }
+    console.log(wishList);    
+
+    console.log(readBok);
     return (
         <div className="flex lg:flex-row flex-col gap-10">
             <div className="w-1/2 flex items-center justify-center bg-gray-200 rounded-lg py-5">
@@ -37,8 +65,8 @@ const SinglePage = () => {
                     
                 </div>
                 <div className="navbar flex gap-5 text-white">
-                    <a className="px-4 py-2 border cursor-pointer rounded bg-white hover:bg-[#50B1C9] hover:text-white text-black" onClick={readTost}>Read</a>
-                    <a className="px-4 py-2 border cursor-pointer rounded bg-[#50B1C9] hover:bg-white hover:text-black" onClick={addWishlist}>Wishlist</a>
+                    <a className="px-4 py-2 border cursor-pointer rounded bg-white hover:bg-[#50B1C9] hover:text-white text-black" onClick={ ()=>addReadBookHandlr(1)}>Read</a>
+                    <a className="px-4 py-2 border cursor-pointer rounded bg-[#50B1C9] hover:bg-white hover:text-black" onClick={()=> addWishListHandlr(22)}>Wishlist</a>
                 </div>
             </div>
             <ToastContainer />
