@@ -8,13 +8,9 @@ const SinglePage = () => {
     const [wishList, setWishList] = useState([]);
 
     const addReadBookHandlr = (newBook)=>{
-        const addReadBook = [...readBok,newBook ];
+        const addReadBook = [...readBok,newBook];
         if(readBok.includes(newBook)){
             toast("Book are all ready in rad list");
-            return;
-        }
-        if(wishList.includes(newBook)){
-            toast("Book are all ready in wishlist");
             return;
         }
         setReadBook(addReadBook);
@@ -27,12 +23,17 @@ const SinglePage = () => {
             toast("Book are all ready in wishlist");
             return;
         }
+        if(readBok.includes(newWish)){
+            toast("You Are All ready in Read");
+            return
+        }
         setWishList(addWishlist);
         toast("Book add in wishlist");
     }
-    console.log(wishList);    
 
+    console.log(wishList);    
     console.log(readBok);
+
     return (
         <div className="flex lg:flex-row flex-col gap-10">
             <div className="w-1/2 flex items-center justify-center bg-gray-200 rounded-lg py-5">
@@ -66,7 +67,7 @@ const SinglePage = () => {
                 </div>
                 <div className="navbar flex gap-5 text-white">
                     <a className="px-4 py-2 border cursor-pointer rounded bg-white hover:bg-[#50B1C9] hover:text-white text-black" onClick={ ()=>addReadBookHandlr(1)}>Read</a>
-                    <a className="px-4 py-2 border cursor-pointer rounded bg-[#50B1C9] hover:bg-white hover:text-black" onClick={()=> addWishListHandlr(22)}>Wishlist</a>
+                    <a className="px-4 py-2 border cursor-pointer rounded bg-[#50B1C9] hover:bg-white hover:text-black" onClick={()=> addWishListHandlr(1)}>Wishlist</a>
                 </div>
             </div>
             <ToastContainer />

@@ -12,6 +12,7 @@ import ListBooks from './components/ListBooks/ListBooks.jsx';
 import PageRead from './components/PageRead/PageRead.jsx';
 import SinglePage from './components/SinglePage/SinglePage.jsx';
 import ContactUs from './components/ContactUS/ContactUs.jsx';
+import About from './components/About/About.jsx';
 
 const router = createBrowserRouter([
   {
@@ -39,7 +40,12 @@ const router = createBrowserRouter([
       {
         path: "/contact",
         element: <ContactUs></ContactUs>,
+      },
+      {
+        path: "/about",
+        element: <About></About>
       }
+
 
     ]
   },

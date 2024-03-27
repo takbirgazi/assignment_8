@@ -1,8 +1,7 @@
-
 const MyBarChart = () => {
   return (
     <div>
-      <h2>This is Bar Chart</h2>
+      <h3>Thi is a bar chart</h3>
     </div>
   );
 };

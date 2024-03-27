@@ -22,7 +22,7 @@ const Book = ({bookInfo}) => {
             <div className="flex justify-between items-center pt-5">
                 <p>{publisher}</p>
                 <p className="flex gap-1 items-center">
-                    <span>{rating}</span>
+                    <span>{rating}</span>-
                     <span><FaRegStar /></span>
                 </p>
             </div>

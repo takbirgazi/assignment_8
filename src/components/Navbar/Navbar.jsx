@@ -6,7 +6,8 @@ const Navbar = () => {
            <li><NavLink to="/">Home</NavLink></li>
            <li><NavLink to="/list">Listed Books</NavLink></li>
            <li><NavLink to="/read">Pages to Read</NavLink></li>
-           <li><NavLink to="/contact">Contact</NavLink></li>
+           <li><NavLink to="/about">About US</NavLink></li>
+           <li><NavLink to="/contact">Contact US</NavLink></li>
         </>
     return (
         <div className="navbar bg-base-100 w-11/12 mx-auto">
@@ -27,8 +28,8 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end flex gap-2 text-white">
-                <a className="px-4 py-2 rounded bg-[#23BE0A]">Sign In</a>
-                <a className="px-4 py-2 rounded bg-[#59C6D2]">Sign Up</a>
+                <a className="lg:px-4 px-2 lg:py-2 py-1 rounded bg-[#23BE0A]">Sign In</a>
+                <a className="lg:px-4 px-2 lg:py-2 py-1 rounded bg-[#59C6D2]">Sign Up</a>
             </div>
         </div>
     );
