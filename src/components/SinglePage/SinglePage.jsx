@@ -3,6 +3,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useState } from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
 import { setBook } from '../../utility/storeData';
+import { setWishBook } from '../../utility/wishlistStore';
 
 const SinglePage = () => {
     const books = useLoaderData();
@@ -38,6 +39,7 @@ const SinglePage = () => {
             return
         }
         setWishList(addWishlist);
+        setWishBook(intIt);
         toast("Book add in wishlist");
     }
 

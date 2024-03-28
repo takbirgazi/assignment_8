@@ -3,6 +3,7 @@ import ReadBookList from "../ReadBookList/ReadBookList";
 import WishListBook from "../WishListBook/WishListBook";
 import { getBook } from "../../utility/storeData";
 import { useEffect, useState } from "react";
+import { getWishBook } from "../../utility/wishlistStore";
 
 const ListBooks = () => {
     const allBook = useLoaderData();
@@ -15,6 +16,18 @@ const ListBooks = () => {
         }
 
     },[allBook])
+
+    const [currentWishBook ,setCurrentWishBook] =  useState([]);
+    useEffect(()=>{
+        const storeWishBook = getWishBook()
+        if(allBook.length > 0){
+            const readBooks = allBook.filter( book => storeWishBook.includes(book.id));
+            setCurrentWishBook(readBooks);
+        }
+
+    },[allBook])
+
+    
 
     return (
         <div>
@@ -46,8 +59,7 @@ const ListBooks = () => {
                     <input type="radio" name="my_tabs_2" role="tab" className="tab" aria-label="Tab 2" />
                     <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box p-6">
                         <div className="flex flex-col gap-5">
-                            <WishListBook key={2}></WishListBook>
-                            <WishListBook key={3}></WishListBook>
+                            {currentWishBook.map( books => <WishListBook key={books.id} bookInfo={books}></WishListBook>)}
                         </div>
                     </div>
 
