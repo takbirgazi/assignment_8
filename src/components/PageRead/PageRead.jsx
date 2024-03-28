@@ -1,10 +1,16 @@
+import { useLoaderData } from "react-router-dom";
 import MyBarChart from "../MyBarChart/MyBarChart";
+import { useEffect, useState } from "react";
 
 const PageRead = () => {
+    const allBooks= useLoaderData()
+    const [store, setStore] = useState([]);
+    useEffect(()=>{
+    allBooks.map(book => setStore(book));
+  },[allBooks])
     return (
         <div>
-            This is PageRead Page
-            <MyBarChart></MyBarChart>
+            <MyBarChart allBooks = {store}></MyBarChart>
         </div>
     );
 };
